@@ -3,6 +3,6 @@ Django
 djangorestframework
 numpy
 pandas
-psycopg2
+psycopg2-binary
 requests
 sqlparse
