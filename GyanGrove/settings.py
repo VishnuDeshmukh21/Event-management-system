@@ -70,9 +70,9 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'GyanGrove.wsgi.application'
+WSGI_APPLICATION = 'GyanGrove.wsgi.application'
 
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
+# WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
