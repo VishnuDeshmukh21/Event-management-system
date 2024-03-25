@@ -1,8 +1,5 @@
-asgiref==3.8.1
 Django
 djangorestframework
-numpy
 pandas
 psycopg2-binary
 requests
-sqlparse
