@@ -3,7 +3,7 @@
   "builds": [{
       "src": "GyanGrove/wsgi.py",
       "use": "@vercel/python",
-      "config": {  "runtime": "python3.11" }
+      "config": {  }
   }],
   "routes": [
       {
