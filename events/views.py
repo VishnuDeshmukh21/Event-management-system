@@ -8,6 +8,8 @@ from .serializers import EventSerializer
 import json
 import time  # Add this import statement
 
+from django.http import HttpResponse
+
 
 def calculate_distance(latitude1, longitude1, latitude2, longitude2):
     url = f"https://gg-backend-assignment.azurewebsites.net/api/Distance?code=IAKvV2EvJa6Z6dEIUqqd7yGAu7IZ8gaH-a0QO6btjRc1AzFu8Y3IcQ==&latitude1={latitude1}&longitude1={longitude1}&latitude2={latitude2}&longitude2={longitude2}"
@@ -153,3 +155,8 @@ def event_add(request):
         return Response({'Success': True}, status=status.HTTP_201_CREATED)
     except Exception as e:
         return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+def hello(request):
+    return HttpResponse("Hello")
