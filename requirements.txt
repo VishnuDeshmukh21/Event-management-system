@@ -3,3 +3,4 @@ djangorestframework
 pandas
 psycopg2-binary
 requests
+django-cors-headers
