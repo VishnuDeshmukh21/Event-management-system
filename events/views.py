@@ -74,7 +74,7 @@ import time  # Add this import statement
 
 import concurrent.futures
 
-@api_view(['GET'])
+@api_view(['POST'])
 def event_find(request):
     try:
         start_time = time.time()  # Record start time
