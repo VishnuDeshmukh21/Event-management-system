@@ -6,7 +6,7 @@ from datetime import timedelta
 from .models import Event
 from .serializers import EventSerializer
 import json
-import time  # Add this import statement
+import time 
 
 from django.http import HttpResponse
 
@@ -82,6 +82,9 @@ def event_find(request):
         latitude = float(request.data.get('latitude'))
         longitude = float(request.data.get('longitude'))
         date_str = request.data.get('date')
+
+        if not (latitude and longitude and date_str):
+            return Response({'error': "All fields are needed"}, status=400)
         
         # Parse the date from string
         date = timezone.datetime.strptime(date_str, '%Y-%m-%d').date()
