@@ -79,12 +79,17 @@ def event_find(request):
     try:
         start_time = time.time()  # Record start time
 
-        latitude = float(request.data.get('latitude'))
-        longitude = float(request.data.get('longitude'))
-        date_str = request.data.get('date')
+        latitude_str = request.data.get('latitude', '')
+        longitude_str = request.data.get('longitude', '')
+        date_str = request.data.get('date', '')
 
-        if not (latitude and longitude and date_str):
-            return Response({'error': "All fields are needed"}, status=400)
+        # Check if all required fields are present
+        if not (latitude_str and longitude_str and date_str):
+            return Response({'error': "Latitude, longitude, and date are required fields."}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Convert latitude and longitude to float
+        latitude = float(latitude_str)
+        longitude = float(longitude_str)
         
         # Parse the date from string
         date = timezone.datetime.strptime(date_str, '%Y-%m-%d').date()
@@ -122,6 +127,7 @@ def event_find(request):
         return Response({'eventDetails': response_data})
     
     except Exception as e:
+
         return Response({'error': str(e)}, status=400)
 
 
