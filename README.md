@@ -1,7 +1,7 @@
 # Event-management-system
 
 
-# event_find:
+# event_find  ( /find ):
 
 Method: POST
 
@@ -17,7 +17,7 @@ JSON response containing event details including distances and weather forecasts
 
 
 
-# event_add:
+# event_add  ( /add ):
 
 Method: POST
 
