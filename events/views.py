@@ -98,7 +98,7 @@ def event_find(request):
         end_date = date + timedelta(days=14)
         
         # Get events occurring within the next 14 days from the specified date
-        events = Event.objects.filter(date__range=[date, end_date]).order_by('date')[:10]
+        events = Event.objects.filter(date__range=[date, end_date]).order_by('date')
         
         # Serialize the events
         serializer = EventSerializer(events, many=True)
